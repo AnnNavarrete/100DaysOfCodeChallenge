@@ -1,0 +1,13 @@
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/HelloWorld.deps.json
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/HelloWorld.runtimeconfig.json
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/HelloWorld.runtimeconfig.dev.json
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/HelloWorld.dll
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/bin/Debug/netcoreapp2.1/HelloWorld.pdb
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/obj/Debug/netcoreapp2.1/HelloWorld.csprojAssemblyReference.cache
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/obj/Debug/netcoreapp2.1/HelloWorld.AssemblyInfoInputs.cache
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/obj/Debug/netcoreapp2.1/HelloWorld.AssemblyInfo.cs
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/obj/Debug/netcoreapp2.1/HelloWorld.dll
+/Users/annnavarrete/Documents/100DaysOfCodeChallenge/Exercism/csharp/hello-world/obj/Debug/netcoreapp2.1/HelloWorld.pdb
