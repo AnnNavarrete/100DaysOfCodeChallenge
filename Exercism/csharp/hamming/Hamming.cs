@@ -10,15 +10,6 @@ public static class Hamming
       throw new ArgumentException();
     }
 
-    var distance = 0;
-
-    for (var i = 0; i < firstStrand.Length; i++)
-    {
-      if (firstStrand[i] != secondStrand[i])
-      {
-        distance += 1;
-      }
-    }
-    return distance;
+    return firstStrand.Select((firstStrandChar, i) => firstStrandChar == secondStrand[i] ? 0 : 1).Sum();
   }
 }
