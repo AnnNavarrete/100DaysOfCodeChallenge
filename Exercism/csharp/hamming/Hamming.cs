@@ -3,6 +3,9 @@ using System.Linq;
 
 public static class Hamming
 {
+  private static bool DoesCharMatch(char firstChar, char secondChar) => firstChar == secondChar;
+  private static int CountMismatches(bool match) => match ? 0 : 1;
+
   public static int Distance(string firstStrand, string secondStrand)
   {
     if (firstStrand.Length != secondStrand.Length)
@@ -10,6 +13,8 @@ public static class Hamming
       throw new ArgumentException();
     }
 
-    return firstStrand.Select((firstStrandChar, i) => firstStrandChar == secondStrand[i] ? 0 : 1).Sum();
+    return firstStrand
+          .Zip(secondStrand, DoesCharMatch)
+          .Sum(CountMismatches);
   }
 }
