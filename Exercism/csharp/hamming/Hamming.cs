@@ -3,7 +3,7 @@ using System.Linq;
 
 public static class Hamming
 {
-  private static bool DoesCharMatch(char firstChar, char secondChar) => firstChar == secondChar;
+  private static bool DoCharsMatch(char firstChar, char secondChar) => firstChar == secondChar;
   private static int CountMismatches(bool match) => match ? 0 : 1;
 
   public static int Distance(string firstStrand, string secondStrand)
@@ -14,7 +14,7 @@ public static class Hamming
     }
 
     return firstStrand
-          .Zip(secondStrand, DoesCharMatch)
+          .Zip(secondStrand, DoCharsMatch)
           .Sum(CountMismatches);
   }
 }
