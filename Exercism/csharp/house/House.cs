@@ -3,25 +3,33 @@ using System.Collections.Generic;
 
 public static class House
 {
-  public static string Recite(int verseNumber)
+  private static string Recite(int verseNumber, string verse)
   {
+    if (verseNumber == 0)
+    {
+      return verse;
+    }
+
     var rhyme = new Dictionary<int, string>()
         {
-            {1, "This is the house that Jack built."},
-            {2, "This is the malt that lay in the house that Jack built."},
-            {3, "This is the rat that ate the malt that lay in the house that Jack built."},
-            {4, "This is the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {5, "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {6, "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {7, "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {8, "This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {9, "This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {10, "This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {11, "This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
-            {12, "This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."},
+            {1, "house that Jack built."},
+            {2, "malt that lay in"},
+            {3, "rat that ate"},
+            {4, "cat that killed"},
+            {5, "dog that worried"},
+            {6, "cow with the crumpled horn that tossed"},
+            {7, "maiden all forlorn that milked"},
+            {8, "man all tattered and torn that kissed"},
+            {9, "priest all shaven and shorn that married"},
+            {10, "rooster that crowed in the morn that woke"},
+            {11, "farmer sowing his corn that kept"},
+            {12, "horse and the hound and the horn that belonged to"},
         };
-    return rhyme[verseNumber];
+
+    return Recite(verseNumber - 1, $"{verse} the {rhyme[verseNumber]}");
   }
+
+  public static string Recite(int verseNumber) => Recite(verseNumber, "This is");
 
   public static string Recite(int startVerse, int endVerse)
   {
