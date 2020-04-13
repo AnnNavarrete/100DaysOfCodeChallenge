@@ -1,24 +1,43 @@
 using System;
+using System.Runtime.Caching;
 
 public class Robot
 {
+  private readonly Random randomNum;
+
   public Robot()
   {
-    GenerateName();
+    randomNum = new Random();
+    this.Name = GenerateUniqueName();
   }
 
-  private void GenerateName()
+  private string GenerateUniqueName()
   {
-    var randomNum = new Random();
+    var robotNameCache = MemoryCache.Default;
+
+    var nameExist = false;
+    var robotName = string.Empty;
+    do
+    {
+      robotName = CreateRobotName();
+      nameExist = robotNameCache[robotName] != null;
+    } while (nameExist);
+
+    robotNameCache[robotName] = true;
+    return robotName;
+  }
+
+  private string CreateRobotName()
+  {
     var firstChar = (char)randomNum.Next(65, 90);
     var secondChar = (char)randomNum.Next(65, 90);
-    Name = $"{firstChar}{secondChar}{randomNum.Next(100, 999)}";
+    return $"{firstChar}{secondChar}{randomNum.Next(100, 999)}";
   }
 
   public string Name { get; private set; }
 
   public void Reset()
   {
-    GenerateName();
+    this.Name = GenerateUniqueName();
   }
 }

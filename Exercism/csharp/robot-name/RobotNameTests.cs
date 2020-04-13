@@ -39,7 +39,7 @@ public class RobotNameTests
     Assert.Matches(@"^[A-Z]{2}\d{3}$", robot.Name);
   }
 
-  [Fact(Skip = "Remove this Skip property to run this test")]
+  [Fact]
   public void Robot_names_are_unique()
   {
     var names = new HashSet<string>();
