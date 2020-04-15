@@ -1,9 +1,10 @@
 using System;
-using System.Runtime.Caching;
+using System.Collections.Generic;
 
 public class Robot
 {
   private readonly Random randomNum;
+  private readonly HashSet<string> currentRobotNames = new HashSet<string>();
 
   public Robot()
   {
@@ -13,17 +14,13 @@ public class Robot
 
   private string GenerateUniqueName()
   {
-    var robotNameCache = MemoryCache.Default;
-
-    var nameExist = false;
     var robotName = string.Empty;
     do
     {
       robotName = CreateRobotName();
-      nameExist = robotNameCache[robotName] != null;
-    } while (nameExist);
+    } while (currentRobotNames.Contains(robotName));
 
-    robotNameCache[robotName] = true;
+    currentRobotNames.Add(robotName);
     return robotName;
   }
 

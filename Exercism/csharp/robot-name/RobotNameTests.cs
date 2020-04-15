@@ -42,10 +42,11 @@ public class RobotNameTests
   [Fact]
   public void Robot_names_are_unique()
   {
+    var robot = new Robot();
     var names = new HashSet<string>();
     for (int i = 0; i < 10_000; i++)
     {
-      var robot = new Robot();
+      robot.Reset();
       Assert.True(names.Add(robot.Name));
     }
   }
