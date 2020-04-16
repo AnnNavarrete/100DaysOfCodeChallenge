@@ -10,21 +10,9 @@ public class Anagram
     _baseWord = baseWord;
   }
 
-  public string[] FindAnagrams(string[] potentialMatches)
-  {
-    var actualMatches = new List<string>();
+  public string[] FindAnagrams(string[] potentialMatches) => potentialMatches.Where(WordIsAnagram).ToArray();
 
-    foreach (var word in potentialMatches)
-    {
-      if (WordIsAnagram(word))
-      {
-        actualMatches.Add(word);
-      }
-    }
-    return actualMatches.ToArray();
-  }
-
-  public bool WordIsAnagram(string potentialMatch)
+  private bool WordIsAnagram(string potentialMatch)
   {
     if (potentialMatch.Length != _baseWord.Length || string.Equals(potentialMatch, _baseWord, StringComparison.OrdinalIgnoreCase))
     {
@@ -39,10 +27,8 @@ public class Anagram
       {
         return false;
       }
-
       lettersRemaining.Remove(letter.ToString());
     }
-
     return true;
   }
 }

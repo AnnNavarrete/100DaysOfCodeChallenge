@@ -13,14 +13,6 @@ public class AnagramTests
   }
 
   [Fact]
-  public void WordIsAnagram_IfStringMatch_ReturnsTrue()
-  {
-    var candidates = "stream";
-    var sut = new Anagram("master");
-    Assert.True(sut.WordIsAnagram(candidates));
-  }
-
-  [Fact]
   public void Detects_two_anagrams()
   {
     var candidates = new[] { "stream", "pigeon", "maters" };
