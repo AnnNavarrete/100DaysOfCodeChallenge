@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 [Flags]
 public enum Allergen
@@ -29,14 +29,6 @@ public class Allergies
 
   public Allergen[] List()
   {
-    var allergies = new List<Allergen>();
-    foreach (Allergen allergy in Enum.GetValues(typeof(Allergen)))
-    {
-      if (IsAllergicTo(allergy))
-      {
-        allergies.Add(allergy);
-      }
-    }
-    return allergies.ToArray();
+    return Enum.GetValues(typeof(Allergen)).Cast<Allergen>().Where(IsAllergicTo).ToArray();
   }
 }
